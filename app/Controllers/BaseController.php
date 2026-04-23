@@ -3,8 +3,10 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
+use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
+use CodeIgniter\Validation\Validation;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -21,11 +23,19 @@ use Psr\Log\LoggerInterface;
 abstract class BaseController extends Controller
 {
     /**
-     * Be sure to declare properties for any property fetch you initialized.
-     * The creation of dynamic property is deprecated in PHP 8.2.
+     * Instance of the main Request class.
      */
+    protected $request;
 
-    // protected $session;
+    /**
+     * Instance of the main Response class.
+     */
+    protected $response;
+
+    /**
+     * Instance of the Validation class.
+     */
+    protected $validator;
 
     /**
      * @return void

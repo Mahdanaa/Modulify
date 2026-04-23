@@ -42,6 +42,8 @@ $RECYCLE.BIN/
 # These should never be under version control,
 # as it poses a security risk.
 .env
+.env.local
+.env.*.local
 .vagrant
 Vagrantfile
 
@@ -59,6 +61,7 @@ Vagrantfile
 
 /writable/uploads/*
 !/writable/uploads/index.html
+/writable/uploads/materi/*
 
 /writable/debugbar/*
 !/writable/debugbar/index.html
@@ -85,6 +88,13 @@ php_errors.log
 # Composer
 #-------------------------
 vendor/
+composer.lock
+
+#-------------------------
+# Node.js / Frontend
+#-------------------------
+node_modules/
+.npmrc
 
 #-------------------------
 # IDE / Development Files
@@ -121,6 +131,15 @@ _modules/*
 
 # Visual Studio Code
 .vscode/
+
+#-------------------------
+# Common Development Files
+#-------------------------
+.DS_Store
+*.log
+.htaccess
+.git/
+.gitkeep
 
 /results/
 /phpunit*.xml
