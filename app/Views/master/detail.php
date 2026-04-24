@@ -86,7 +86,7 @@
 
 
 <?= $this->section('scripts') ?>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/sweetalert2.min.js"></script>
 
 <script>
     function toggleStatus(id, btnElement) {
