@@ -1,5 +1,11 @@
 <?= $this->extend('layout/template') ?>
 
+<?php
+/** @var array $tutorial */
+/** @var array $contents */
+/** @var \CodeIgniter\Pager\Pager $pager */
+?>
+
 <?= $this->section('content') ?>
 
 <div class="max-w-6xl mx-auto bg-white p-8 rounded-xl shadow-lg mt-10 mb-20 border border-gray-100">

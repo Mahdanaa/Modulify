@@ -1,5 +1,10 @@
 <?= $this->extend('layout/template') ?>
 
+<?php
+/** @var array $tutorial */
+/** @var array $makul */
+?>
+
 <?= $this->section('content') ?>
 
     <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md mt-10">

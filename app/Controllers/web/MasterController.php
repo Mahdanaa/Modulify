@@ -8,8 +8,8 @@ use App\Models\TutorialContentModel;
 
 class MasterController extends BaseController
 {
-    protected $masterModel;
-    protected $contentModel;
+    protected MasterTutorialModel $masterModel;
+    protected TutorialContentModel $contentModel;
 
     public function __construct()
     {
@@ -94,7 +94,7 @@ class MasterController extends BaseController
         return redirect()->to('/master')->with('success', 'Modul baru berhasil ditambahkan!');
     }
 
-    public function delete($id)
+    public function delete(int $id)
     {
         $tutorial = $this->masterModel->find($id);
 
@@ -110,7 +110,7 @@ class MasterController extends BaseController
         return redirect()->to('/master')->with('success', 'Modul berhasil dihapus!');
     }
 
-    public function edit($id)
+    public function edit(int $id)
     {
         $tutorial = $this->masterModel->find($id);
 
@@ -131,7 +131,7 @@ class MasterController extends BaseController
         ]);
     }
 
-    public function update($id)
+    public function update(int $id)
     {
         if (!$this->validate([
             'judul' => 'required|min_length[3]|max_length[255]',
@@ -159,7 +159,7 @@ class MasterController extends BaseController
         return redirect()->to('/master')->with('success', 'Modul berhasil diubah!');
     }
 
-    public function detail($id)
+    public function detail(int $id)
     {
         $tutorial = $this->masterModel->find($id);
 
@@ -177,7 +177,7 @@ class MasterController extends BaseController
         ]);
     }
 
-    public function createDetail($id)
+    public function createDetail(int $id)
     {
         $tutorial = $this->masterModel->find($id);
 
@@ -187,7 +187,7 @@ class MasterController extends BaseController
         ]);
     }
 
-    public function storeDetail($id)
+    public function storeDetail(int $id)
     {
         if (!$this->validate([
             'bab' => 'required|min_length[3]',
@@ -244,7 +244,7 @@ class MasterController extends BaseController
         ]);
     }
 
-    public function toggleVisibility($id)
+    public function toggleVisibility(int $id)
     {
         $materi = $this->contentModel->find($id);
 
@@ -261,7 +261,7 @@ class MasterController extends BaseController
         ]);
     }
 
-    public function editDetail($id)
+    public function editDetail(int $id)
     {
         $materi = $this->contentModel->find($id);
 
@@ -272,7 +272,7 @@ class MasterController extends BaseController
         return view('master/edit_detail', ['title' => 'Edit Detail', 'materi' => $materi]);
     }
 
-    public function updateDetail($id)
+    public function updateDetail(int  $id)
     {
         if (!$this->validate([
             'bab' => 'required|min_length[3]',
@@ -297,7 +297,7 @@ class MasterController extends BaseController
         return redirect()->to('/master/detail/' . $materi['tutorial_id'])->with('success', 'Materi berhasil diupdate!');
     }
 
-    public function deleteDetail($id)
+    public function deleteDetail(int $id)
     {
         $materi = $this->contentModel->find($id);
 

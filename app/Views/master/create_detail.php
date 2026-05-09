@@ -1,4 +1,7 @@
 <?= $this->extend('layout/template') ?>
+<?php
+/** @var array $tutorial */
+?>
 
 <?= $this->section('content') ?>
 

@@ -1,5 +1,10 @@
 <?= $this->extend('layout/template') ?>
 
+<?php
+/** @var array<int, array<string, string>> $tutorials */
+/** @var array $makul */
+/** @var \CodeIgniter\Pager\Pager $pager */
+?>
 <?= $this->section('content') ?>
 
     <nav class="bg-white shadow-md sticky top-0 p-4 flex justify-between items-center mb-8 z-10">
