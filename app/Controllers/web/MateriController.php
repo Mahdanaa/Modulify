@@ -8,8 +8,8 @@ use App\Models\TutorialContentModel;
 
 class MateriController extends BaseController
 {
-    protected $masterModel;
-    protected $contentModel;
+    protected MasterTutorialModel $masterModel;
+    protected TutorialContentModel $contentModel;
 
     public function __construct()
     {
@@ -17,7 +17,7 @@ class MateriController extends BaseController
         $this->contentModel = new TutorialContentModel();
     }
 
-    public function baca($segment)
+    public function baca(string $segment)
     {
         $materi = $this->masterModel->where('url_presentation', $segment)
                                     ->orWhere('url_finished', $segment)
